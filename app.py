@@ -258,6 +258,8 @@ def conversation_with_data(request_body):
         r = r.json()
         r['history_metadata'] = history_metadata
 
+        logging.info(body)
+
         return Response(format_as_ndjson(r), status=status_code)
     else:
         return Response(stream_with_data(body, headers, endpoint, history_metadata), mimetype='text/event-stream')
