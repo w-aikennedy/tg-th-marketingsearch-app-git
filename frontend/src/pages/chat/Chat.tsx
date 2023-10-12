@@ -9,6 +9,7 @@ import uuid from 'react-uuid';
 
 import styles from "./Chat.module.css";
 import Azure from "../../assets/Azure.svg";
+import thorogood from "../../assets/thorogood.svg";
 
 import {
     ChatMessage,
@@ -550,7 +551,7 @@ const Chat = () => {
                         {!messages || messages.length < 1 ? (
                             <Stack className={styles.chatEmptyState}>
                                 <img
-                                    src={thorogood-logo}
+                                    src={thorogood}
                                     className={styles.chatIcon}
                                     aria-hidden="true"
                                 />
