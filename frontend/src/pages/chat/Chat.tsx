@@ -555,7 +555,7 @@ const Chat = () => {
                                     className={styles.chatIcon}
                                     aria-hidden="true"
                                 />
-                                <h1 className={styles.chatEmptyStateTitle}>Thorogood Webcasts</h1>
+                                <h1 className={styles.chatEmptyStateTitle}>Thorogood Webcast Intelligence</h1>
                                 <h2 className={styles.chatEmptyStateSubtitle}>This chatbot will answer questions based on content in Thorogood's recorded webcasts</h2>
                             </Stack>
                         ) : (
