@@ -41,12 +41,12 @@ export const Answer = ({
         if (citation.filepath && citation.chunk_id) {
             if (truncate && citation.filepath.length > filePathTruncationLimit) {
                 const citationLength = citation.filepath.length;
-                // chunk numbers removed, can re-add between the last curly braces:  - Part ${parseInt(citation.chunk_id) + 1
-                citationFilename = `${citation.filepath.substring(0, 20)}...${citation.filepath.substring(citationLength -20)}}`;
+                // chunk numbers removed, can re-add after the last curly brace:  - Part ${parseInt(citation.chunk_id) + 1}
+                citationFilename = `${citation.filepath.substring(0, 20)}...${citation.filepath.substring(citationLength -20)}`;
             }
             else {
-                // - Part ${parseInt(citation.chunk_id) + 1
-                citationFilename = `${citation.filepath}}`;
+                // - Part ${parseInt(citation.chunk_id) + 1}
+                citationFilename = `${citation.filepath}`;
             }
         }
         else if (citation.filepath && citation.reindex_id) {
