@@ -55,6 +55,11 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
                 value={question}
                 onChange={onQuestionChange}
                 onKeyDown={onEnterPress}
+                styles={{
+                    field: {
+                        fontFamily: '"Tenorite", "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif'
+                    }
+                }}
             />
             <div className={styles.questionInputSendButtonContainer} 
                 role="button" 

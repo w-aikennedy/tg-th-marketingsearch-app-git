@@ -252,6 +252,7 @@
     max-width: 30%;
     overflow-y: scroll;
     max-height: calc(100vh - 100px);
+    font-family: "Tenorite", "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
 }
 
 .citationPanelHeaderContainer {
