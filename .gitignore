@@ -4,3 +4,10 @@ frontend/node_modules
 # static
 .azure/
 __pycache__/
+
+
+# amplify
+node_modules
+.amplify
+amplify_outputs*
+amplifyconfiguration*
