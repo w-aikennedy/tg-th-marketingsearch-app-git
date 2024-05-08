@@ -343,7 +343,8 @@ def conversation_without_data(request_body):
 @app.route("/conversation", methods=["GET", "POST"])
 def conversation():
     request_body = request.json
-    return conversation_internal(request_body)
+    conversation_internal_output = conversation_internal(request_body)
+    return conversation_internal_output
 
 def conversation_internal(request_body):
     try:
