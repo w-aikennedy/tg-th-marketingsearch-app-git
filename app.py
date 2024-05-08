@@ -351,7 +351,7 @@ def conversation():
 
     if AZURE_APP_INSIGHTS_INSTRUMENTATION_KEY:
         tc = TelemetryClient(AZURE_APP_INSIGHTS_INSTRUMENTATION_KEY)
-        tc.track_event('Chatbot response', { 'response': '3' })
+        tc.track_event('Chatbot response', { 'response': json.dumps(conversation_internal_output) })
         tc.flush()
     return conversation_internal_output
 
