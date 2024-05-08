@@ -6,6 +6,7 @@ import openai
 from azure.identity import DefaultAzureCredential
 from flask import Flask, Response, request, jsonify, send_from_directory
 from dotenv import load_dotenv
+from applicationinsights import TelemetryClient
 
 from backend.auth.auth_utils import get_authenticated_user_details
 from backend.history.cosmosdbservice import CosmosConversationClient
@@ -347,6 +348,11 @@ def conversation_without_data(request_body):
 def conversation():
     request_body = request.json
     conversation_internal_output = conversation_internal(request_body)
+
+    if (AZURE_APP_INSIGHTS_INSTRUMENTATION_KEY):
+        tc = TelemetryClient('<YOUR INSTRUMENTATION KEY GOES HERE>')
+        tc.track_trace('Chatbot response', { 'response': json.dumps(request_body) })
+        tc.flush()
     return conversation_internal_output
 
 def conversation_internal(request_body):
