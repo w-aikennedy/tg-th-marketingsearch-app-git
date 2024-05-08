@@ -349,10 +349,9 @@ def conversation():
     request_body = request.json
     conversation_internal_output = conversation_internal(request_body)
 
-    if (AZURE_APP_INSIGHTS_INSTRUMENTATION_KEY):
-        tc = TelemetryClient(AZURE_APP_INSIGHTS_INSTRUMENTATION_KEY)
-        tc.track_trace('Chatbot response', { 'response': json.dumps(request_body) })
-        tc.flush()
+    tc = TelemetryClient(AZURE_APP_INSIGHTS_INSTRUMENTATION_KEY)
+    tc.track_trace('Chatbot response', { 'response': json.dumps(conversation_internal_output) })
+    tc.flush()
     return conversation_internal_output
 
 def conversation_internal(request_body):
