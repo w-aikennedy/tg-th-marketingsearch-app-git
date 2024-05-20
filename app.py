@@ -175,7 +175,7 @@ def prepare_body_headers_with_data(request):
             {
                 "type": "AzureCognitiveSearch",
                 "parameters": {
-                    "endpoint": f"https://{AZURE_SEARCH_SERVICE}.search.windows.net",
+                    "endpoint": f"https://prod-17.northeurope.logic.azure.com:443/workflows/12c75736f3d1400ea61a9c2eccd8ce7c/triggers/When_a_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun&sv=1.0&sig=fb-vUKr6SbAf5SJavqX5q3p5iBxfByQ2bv9gwmLb8kg",
                     "key": AZURE_SEARCH_KEY,
                     "indexName": AZURE_SEARCH_INDEX,
                     "fieldsMapping": {
